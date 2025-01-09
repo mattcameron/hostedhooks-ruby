@@ -86,6 +86,10 @@ module HostedHooks
       get_response("/apps/#{app_uuid}/webhook_attempts", params.slice(:page, :per_page, :offset))
     end
 
+    def list_endpoint_webhook_attempts(app_uuid, endpoint_uuid, params = {})
+      get_response("/apps/#{app_uuid}/endpoints/#{endpoint_uuid}/webhook_attempts", params.slice(:page, :per_page, :offset))
+    end
+
     # HookHelpers
 
     def list_hook_helpers(params = {})
